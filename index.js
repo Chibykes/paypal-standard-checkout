@@ -11,11 +11,11 @@ app.use(
   })
 );
 const port = process.env.PORT || 3000;
-// const environment = process.env.ENVIRONMENT || "sandbox";
+const environment = process.env.ENVIRONMENT || "sandbox";
 const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
 const endpoint_url =
-process.env.ENVIRONMENT === "sandbox"
+  environment === "sandbox"
     ? "https://api-m.sandbox.paypal.com"
     : "https://api-m.paypal.com";
 
