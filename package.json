@@ -1,11 +1,12 @@
 {
-  "name": "ppcp-starter-node",
+  "name": "paypal-standard-checkout",
   "version": "1.0.0",
   "description": "Starter code for a Node.js app for PayPal Complete Payments - Standard Checkout",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
