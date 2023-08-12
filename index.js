@@ -19,6 +19,9 @@ const endpoint_url =
     ? "https://api-m.sandbox.paypal.com"
     : "https://api-m.paypal.com";
 
+
+    console.log("enviromnent", process.env.ENVIRONMENT);
+    console.log(endpoint_url);
 /**
  * Creates an order and returns it as a JSON response.
  * @function
