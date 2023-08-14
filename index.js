@@ -116,6 +116,11 @@ app.post("/complete_order", (req, res) => {
 // Helper / Utility functions
 
 //Servers the index.html file
+app.get("/access-token", async(req, res) => {
+  res.send(await get_access_token());
+});
+
+//Servers the index.html file
 app.get("*", (req, res) => {
   res.sendFile(process.cwd() + "/public/404.html");
 });
