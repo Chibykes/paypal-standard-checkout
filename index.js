@@ -121,6 +121,13 @@ app.get("/access-token", async(req, res) => {
 });
 
 //Servers the index.html file
+app.get("/test", async(req, res) => {
+  fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => response.json())
+      .then(json => res.send(json))
+});
+
+//Servers the index.html file
 app.get("*", (req, res) => {
   res.sendFile(process.cwd() + "/public/404.html");
 });
