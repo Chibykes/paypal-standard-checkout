@@ -1,6 +1,11 @@
-import express from "express";
-import fetch from "node-fetch";
-import "dotenv/config";
+// import express from "express";
+// import fetch from "node-fetch";
+// import "dotenv/config";
+
+const express = require("express");
+const fetch = require("./fetch.cjs");
+require('dotenv').config();
+
 const app = express();
 
 app.use(express.static(`${process.cwd()}/public`));
