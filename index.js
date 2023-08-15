@@ -1,14 +1,14 @@
-import express from "express";
-import fetch from "node-fetch";
-import "dotenv/config";
+// import express from "express";
+// import fetch from "node-fetch";
+// import "dotenv/config";
 
-// const express = require("express");
-// const fetch = require("./fetch.cjs");
-// require('dotenv').config();
+const express = require("express");
+const fetch = require("./fetch.cjs");
+require('dotenv').config();
 
 const app = express();
 
-app.use(express.static(`${process.cwd()}/public`));
+app.use(express.static(`${__dirname}/public`));
 app.use(express.json());
 app.use(
   express.urlencoded({
@@ -127,12 +127,12 @@ app.get("/access-token", async(req, res) => {
 
 //Servers the index.html file
 app.get("/test", async(req, res) => {
-  res.send(`${process.cwd()}/public`);
+  res.send(`${__dirname}/public`);
 });
 
 //Servers the index.html file
 app.get("*", (req, res) => {
-  res.sendFile(process.cwd() + "/public/404.html");
+  res.sendFile(__dirname + "/public/404.html");
 });
 
 //PayPal Developer YouTube Video:
@@ -160,5 +160,4 @@ app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
 
-// module.exports = app;
-export default app;
+module.exports = app;
