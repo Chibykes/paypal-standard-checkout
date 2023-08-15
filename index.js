@@ -8,7 +8,7 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(express.static(`${process.cwd()}/public`));
+app.use(express.static(`${__dirname}/public`));
 app.use(express.json());
 app.use(
   express.urlencoded({
@@ -127,12 +127,12 @@ app.get("/access-token", async(req, res) => {
 
 //Servers the index.html file
 app.get("/test", async(req, res) => {
-  res.send(`${process.cwd()}/public`);
+  res.send(`${__dirname}/public`);
 });
 
 //Servers the index.html file
 app.get("*", (req, res) => {
-  res.sendFile(process.cwd() + "/public/404.html");
+  res.sendFile(__dirname + "/public/404.html");
 });
 
 //PayPal Developer YouTube Video:
